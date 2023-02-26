@@ -183,7 +183,7 @@ async function sendData({ collectionName, documentId = null, data }) {
 
 //events
 announcementSubmit.addEventListener("click", (e) => {
-  if (!announcementForm.checkValidity()) return;
+  if (!announcementForm.querySelector("form").checkValidity()) return;
 
   e.preventDefault();
   const title = document.getElementById("announcementTitle").value;
