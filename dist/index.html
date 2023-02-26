@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Admin Panel</title>
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">Admin Panel</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Dashboard</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="text-center m-3" id="progress">0</div>
+    <div class="container mt-4">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-header">Announcements</div>
+            <ul class="list-group list-group-flush">
+              <li id="addAnnouncement" class="list-group-item">
+                <a href="#">Add Announcement</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- <div class="col-md-4 mt-md-0 mt-4">
+          <div class="card">
+            <div class="card-header">Presenters</div>
+            <ul class="list-group list-group-flush">
+              <li id="addPresenter" class="list-group-item">
+                <a href="#">Add a Presenter</a>
+              </li>
+            </ul>
+          </div>
+        </div> -->
+
+        <div class="col-md-4 mt-md-0 mt-4">
+          <div class="card">
+            <div class="card-header">Shows</div>
+            <ul class="list-group list-group-flush">
+              <li id="addShow" class="list-group-item">
+                <a href="#">Add a Show</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div hidden id="showForm" class="container mt-4">
+      <h2>Upload a Show</h2>
+      <form>
+        <div class="form-group">
+          <label for="showTitle">Title</label>
+          <input
+            required
+            type="text"
+            class="form-control"
+            id="showTitle"
+            name="showTitle"
+            placeholder="Enter show title"
+          />
+        </div>
+        <div class="form-group">
+          <label for="showPresenter">Presenter</label>
+          <input
+            required
+            type="text"
+            class="form-control"
+            id="showPresenter"
+            name="showPresenter"
+            placeholder="Enter show presenter"
+          />
+        </div>
+        <div class="form-group">
+          <label for="showAudio">Audio URL</label>
+          <input
+            placeholder="https://example.com/show.mp3"
+            required
+            type="url"
+            class="form-control"
+            id="showAudio"
+            name="showAudio"
+          />
+        </div>
+        <button id="showSubmit" type="submit" class="btn btn-primary">
+          Upload
+        </button>
+      </form>
+    </div>
+
+    <div hidden id="announcementForm" class="container mt-4">
+      <h2>Add an Announcement</h2>
+      <form>
+        <div class="form-group">
+          <label for="announcementTitle">Title</label>
+          <input
+            required
+            type="text"
+            class="form-control"
+            id="announcementTitle"
+            name="announcementTitle"
+            placeholder="Enter announcement title"
+          />
+        </div>
+        <div class="form-group">
+          <label for="announcementBody">Body</label>
+          <textarea
+            required
+            class="form-control"
+            id="announcementBody"
+            name="announcementBody"
+            rows="5"
+            placeholder="Enter announcement body"
+          ></textarea>
+        </div>
+        <button id="announcementSubmit" type="submit" class="btn btn-primary">
+          Add Announcement
+        </button>
+      </form>
+    </div>
+
+    <div hidden id="presenterForm" class="container mt-4">
+      <h2>Add a Presenter</h2>
+      <form>
+        <div class="form-group">
+          <label for="presenterName">Name</label>
+          <input
+            required
+            type="text"
+            class="form-control"
+            id="presenterName"
+            name="presenterName"
+            placeholder="Enter presenter name"
+          />
+        </div>
+        <div class="form-group">
+          <label for="presenterBio">Bio</label>
+          <textarea
+            required
+            class="form-control"
+            id="presenterBio"
+            name="presenterBio"
+            rows="5"
+            placeholder="Enter presenter bio"
+          ></textarea>
+        </div>
+        <div class="form-group">
+          <label for="presenterPicture">Picture</label>
+          <input
+            required
+            type="file"
+            accept="image/*"
+            class="form-control"
+            id="presenterPicture"
+            name="presenterPicture"
+          />
+        </div>
+        <div class="form-group">
+          <label for="presenterShow">Show</label>
+          <input
+            required
+            type="text"
+            class="form-control"
+            id="presenterShow"
+            name="presenterShow"
+            placeholder="Enter presenter's show"
+          />
+        </div>
+        <button id="presenterSubmit" type="submit" class="btn btn-primary">
+          Add Presenter
+        </button>
+      </form>
+    </div>
+    <div class="m-2"></div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <script src="bundle.js"></script>
+  </body>
+</html>
